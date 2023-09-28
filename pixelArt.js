@@ -30,7 +30,7 @@ choseCharacter();
 
 }
 
-//mouseClicker maakt he zo dat als je een blokje met een naam aanklikt dat pixelArtCycle de correcte waarde krijgt.
+//mouseClicked maakt he zo dat als je een blokje met een naam aanklikt dat pixelArtCycle de correcte waarde krijgt.
 function mouseClicked() {
   if (mouseX >= 500 && mouseX <= 650 && mouseY >= 100 && mouseY <= 140) {
     pixelArtCycle = 1
