@@ -28,6 +28,10 @@ choseCharacter();
     cat();
   }
 
+  else if (pixelArtCycle == 5) {
+    creeper();
+  }
+
 }
 
 //mouseClicked maakt he zo dat als je een blokje met een naam aanklikt dat pixelArtCycle de correcte waarde krijgt.
@@ -44,7 +48,9 @@ function mouseClicked() {
   else if (mouseX >= 500 && mouseX <= 650 && mouseY >= 220 && mouseY <= 260) {
     pixelArtCycle = 4
   }
-  console.log(pixelArtCycle)
+  else if (mouseX >= 500 && mouseX <= 650 && mouseY >= 260 && mouseY <= 300){
+    pixelArtCycle = 5
+  }
 
 }
 
@@ -162,6 +168,34 @@ function cat() {
   drawPixelArt(catDrawing, catColors, 25);
 }
 
+//creeper zijn de kleuren die creeper moet krijgen als i getekent word, (met getallen die in dezelfde functie een kleur toegewezen krikgen).
+function creeper() {
+  let creeperColors = ["white", "black", "green", "lime"]
+  let creeperDrawing = [
+[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+[0, 1, 3, 3, 3, 2, 3, 2, 3, 3, 1, 0],
+[1, 3, 3, 1, 1, 3, 2, 1, 1, 3, 3, 1],
+[1, 3, 3, 1, 1, 3, 3, 1, 1, 3, 2, 1],
+[1, 2, 3, 3, 3, 1, 1, 3, 3, 3, 2, 1],
+[1, 3, 2, 3, 1, 1, 1, 1, 3, 2, 3, 1],
+[1, 3, 2, 3, 1, 2, 2, 1, 3, 2, 2, 1],
+[1, 1, 3, 3, 3, 2, 3, 2, 3, 2, 1, 1],
+[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+[0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 1, 0],
+[1, 3, 1, 2, 2, 2, 2, 3, 3, 1, 3, 1],
+[1, 2, 1, 3, 2, 3, 2, 3, 3, 1, 3, 1],
+[1, 3, 1, 3, 3, 3, 2, 2, 3, 1, 2, 1],
+[0, 1, 1, 3, 2, 2, 2, 3, 3, 1, 1, 0],
+[0, 0, 1, 3, 3, 3, 3, 3, 3, 1, 0, 0],
+[0, 0, 1, 3, 2, 2, 3, 3, 2, 1, 0, 0],
+[0, 0, 1, 3, 2, 1, 1, 3, 2, 1, 0, 0],
+[0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0]
+  ];
+
+
+  drawPixelArt(creeperDrawing, creeperColors, 18)
+}
+
 //drawPixelArt gooit alle kleuren van de vorige funties in een square, zodat het gekleruede blokjes worden inplaats van alleen kleuren i een lijstje.
 function drawPixelArt(pixels, colors, size)
 {
@@ -198,5 +232,9 @@ function choseCharacter(){
   rect(500, 220, 150, 40)
   fill("black")
   text("Cat", 550, 245)
+  fill("white")
+  rect(500, 260, 150, 40)
+  fill("black")
+  text("Creeper", 530, 285)
 
 }
